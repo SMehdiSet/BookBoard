@@ -9,6 +9,11 @@ namespace BookBoard.DataLayer.Entities.User
 {
     public class User
     {
+        public User()
+        {
+            
+        }
+
         [Key]
         public int UserId { get; set; }
 
@@ -40,5 +45,11 @@ namespace BookBoard.DataLayer.Entities.User
         
         [Display(Name = "تاریخ ثبت نام")]
         public DateTime RegisterDate { get; set; }
+
+        #region Relations
+
+        public virtual List<UserRole> UserRoles { get; set; }
+
+        #endregion
     }
 }

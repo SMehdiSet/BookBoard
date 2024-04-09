@@ -9,6 +9,11 @@ namespace BookBoard.DataLayer.Entities.User
 {
     public class Role
     {
+        public Role()
+        {
+            
+        }
+
         [Key]
         public int RoleId { get; set; }
 
@@ -16,5 +21,12 @@ namespace BookBoard.DataLayer.Entities.User
         [Required(ErrorMessage = "لطفا {0} را وارد کنید.")]
         [MaxLength(200, ErrorMessage = "{0} نمیتواند بیش از {1} کاراکتر داشته باشد.")]
         public string RoleTitle { get; set; }
+
+
+        #region Relations
+
+        public virtual List<UserRole> UserRoles { get; set;}
+
+        #endregion
     }
 }
