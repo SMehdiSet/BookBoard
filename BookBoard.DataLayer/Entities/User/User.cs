@@ -35,12 +35,14 @@ namespace BookBoard.DataLayer.Entities.User
 
 
         [Display(Name = "کد فعالسازی")]
+        [MaxLength(50, ErrorMessage = "{0} نمیتواند بیش از {1} کاراکتر داشته باشد.")]
         public string ActiveCode { get; set; }
 
         [Display(Name = "وضعیت")]
         public bool IsActive { get; set; }
         
         [Display(Name = "آواتار")]
+        [MaxLength(200, ErrorMessage = "{0} نمیتواند بیش از {1} کاراکتر داشته باشد.")]
         public string UserAvatar { get; set; }
         
         [Display(Name = "تاریخ ثبت نام")]
@@ -49,7 +51,7 @@ namespace BookBoard.DataLayer.Entities.User
         #region Relations
 
         public virtual List<UserRole> UserRoles { get; set; }
-
+            
         #endregion
     }
 }
